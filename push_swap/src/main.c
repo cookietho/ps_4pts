@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 20:42:13 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/20 20:17:58 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/26 14:59:40 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,5 @@ int	main(int ac, char **av)
 	if (is_sorted(a) != 1)
 		return (0);
 	push_swap(a, b);
-	return (0);
+//	return (0);
 }
