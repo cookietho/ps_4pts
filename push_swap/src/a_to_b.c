@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   a_to_b.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/26 00:33:06 by minakim           #+#    #+#             */
+/*   Updated: 2019/06/26 00:52:34 by minakim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int		mid_point_a(t_stack *a, int n)
@@ -9,8 +21,7 @@ int		mid_point_a(t_stack *a, int n)
 
 	i = 0;
 	tmp = a->top;
-	while (i < n)
-	{
+	while (i < n) {
 		arr[i] = tmp->value;
 		i++;
 		tmp = tmp->next;
@@ -30,18 +41,28 @@ int		a_to_b(t_stack *a, t_stack *b, int n)
 	count = 0;
 	mid = mid_point_a(a, n);
 	tmp = a->top;
-	while (i < n)
-	{
+	while (i++ < n) {
 		if (tmp->value < mid)
 			pb(a, b);
 		else {
 			ra(a);
 			count++;
 		}
-		i++;
 		tmp = a->top;
 	}
 	while (count-- > 0)
 		rra(a);
 	return (n / 2);
+}
+
+void	chunk_sorting2(t_stack *a, t_stack *b, int n)
+{
+	if (n == 1)
+		pa(a, b);
+	else if (n == 2) {
+		if (ft_strcmp(is_chunk_sorted(b, n), "B") == 0)
+			sb(b);
+		while (n-- > 0)
+			pa(a, b);
+	}
 }

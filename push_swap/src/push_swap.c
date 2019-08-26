@@ -17,11 +17,10 @@ int		is_sorted(t_stack *a)
 	t_node	*tmp;
 
 	tmp = a->top;
-	while(tmp && tmp->next)
-	{
+	while (tmp && tmp->next) {
 		if (tmp->value > tmp->next->value)
 			return (1);
-			tmp = tmp->next;
+		tmp = tmp->next;
 	}
 	return (0);
 }
@@ -36,6 +35,6 @@ void	push_swap(t_stack *a, t_stack *b)
 		sorting_3(a, b);
 	else if (check_nbr(a) > 5)
 		sorting_2(a, b);
-    free(a);
-    free(b);
+	free(a);
+	free(b);
 }

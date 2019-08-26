@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-int		myPower(int n)
+int		my_power(int n)
 {
 	int	i;
 	int	nbr;
@@ -28,7 +28,7 @@ int		find_npower(int n)
 	int	x;
 
 	x = 0;
-	while (n > myPower(x)) {
+	while (n > my_power(x)) {
 		x++;
 	}
 	return (x);

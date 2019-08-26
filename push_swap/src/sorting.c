@@ -98,12 +98,10 @@ void	sorting_3(t_stack*a, t_stack *b)
 	pb(a, b);
 	pb(a, b);
 	sorting_1(a);
-	while (!isEmpty(b))
-	{
+	while (!isEmpty(b)) {
 		if (b->top->value <= a->top->value)
 			pa(a, b);
-		else if (b->top->value >= find_max(a))
-		{
+		else if (b->top->value >= find_max(a)) {
 			pa(a, b);
 			ra(a);
 		}

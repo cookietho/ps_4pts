@@ -17,8 +17,7 @@ void	print_stack(struct s_stack *stack)
 	t_node	*tmp;
 
 	tmp = stack->top;
-	while (tmp)
-	{
+	while (tmp) {
 		ft_printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
@@ -29,8 +28,7 @@ int	isInt(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
-	{
+	while (str[i]) {
 		if (str[i] < 48 || str[i] > 57)
 			return (1);
 		i++;
@@ -45,13 +43,11 @@ int	main(int ac, char **av)
 
 	a = initstack();
 	b = initstack();
-	if (ac >= 2)
-	{
+	if (ac >= 2) {
 		int	i;
 
 		i = ac - 1;
-		while (av[i] && i != 0)
-		{
+		while (av[i] && i != 0) {
 			if (isInt(av[i]) == 1) {
 				ft_printf("ERROR\n");
 				exit(0);
@@ -63,7 +59,5 @@ int	main(int ac, char **av)
 	if (is_sorted(a) != 1)
 		return (0);
 	push_swap(a, b);
-//	free(a);
-//	free(b);
 	return (0);
 }

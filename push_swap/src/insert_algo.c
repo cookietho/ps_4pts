@@ -14,9 +14,10 @@
 
 int		*letsSort(int *arr, int n)
 {
-	int	i, key, j;
+	int	key;
+	int	j;
 
-	for (i = 1; i < n; i++) {
+	for (int i = 1; i < n; i++) {
 		key = arr[i];
 		j = i - 1;
 		while (j >= 0 && arr[j] > key) {
@@ -25,7 +26,7 @@ int		*letsSort(int *arr, int n)
 		}
 		arr[j + 1] = key;
 	}
-	return(arr);
+	return (arr);
 }
 
 int		*insertionSort(t_stack *a)
@@ -38,8 +39,7 @@ int		*insertionSort(t_stack *a)
 
 	i = 0;
 	tmp = a->top;
-	while (tmp)
-	{
+	while (tmp) {
 		arr[i] = tmp->value;
 		i++;
 		tmp = tmp->next;

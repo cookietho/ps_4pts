@@ -35,8 +35,7 @@ int		mid_point(t_stack *s, int n)
 
 	i = 0;
 	tmp = s->top;
-	while (i < n)
-	{
+	while (i < n) {
 		arr[i] = tmp->value;
 		i++;
 		tmp = tmp->next;
@@ -57,8 +56,7 @@ void	push_to_a(t_stack *a, t_stack *b, int n)
 	count = 0;
 	mid = mid_point(b, n);
 	tmp = b->top;
-	while (i < n)
-	{
+	while (i < n) {
 		if (tmp->value > mid)
 			pa(a, b);
 		else {
@@ -79,17 +77,8 @@ void	chunk_sorting(t_stack *a, t_stack *b, int n)
 	int	i;
 
 	i = 1;
-	if (n == 1) {
-		pa(a, b);
-	}
-	else if (n == 2) {
-		if (ft_strcmp(is_chunk_sorted(b, n), "B") == 0) {
-			sb(b);
-		}
-		while (n-- > 0) {
-			pa(a, b);
-		}
-	}
+	if (n >= 1 && n <= 2)
+		chunk_sorting2(a, b, n);
 	else {
 		push_to_a(a, b, n);
 		nbr_a = n / 2;
